@@ -22,7 +22,7 @@
 执行完上面命令后，接着执行以下命令，这行命令的作用是生成我们在浏览器里看到的html静态文件。$ hex">
 <meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/hexo1.png?imageView2/0/w/600/h/600">
 <meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/hexo2.png?imageView2/0/w/600/h/600">
-<meta property="og:updated_time" content="2017-03-22T01:09:49.080Z">
+<meta property="og:updated_time" content="2017-03-22T02:26:49.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建博客过程">
 <meta name="twitter:description" content="其实hexo搭建博客超级简单。不过因为开始对这个不熟悉，跟着网上找到的教程操作反而入了很多坑。这篇文章算是做个总结吧。下面分几个阶段逐渐由简入深来讲解。
@@ -193,9 +193,13 @@
 <h2 id="快速熟悉hexo"><a href="#快速熟悉hexo" class="headerlink" title="快速熟悉hexo"></a>快速熟悉hexo</h2><h3 id="hexo博客成型"><a href="#hexo博客成型" class="headerlink" title="hexo博客成型"></a>hexo博客成型</h3><ol>
 <li>打开hexo官方文档，根据”安装前提”检查是否已经安装需要的应用程序。都安装好了后，按照文档上的步骤建站。<img src="http://omsqnp96s.bkt.clouddn.com/static/images/hexo1.png?imageView2/0/w/600/h/600"></li>
 <li>执行完上面命令后，接着执行以下命令，这行命令的作用是生成我们在浏览器里看到的html静态文件。<br><code>$ hexo generate</code><br>该命令可以简写为<br><code>$ hexo g</code></li>
-<li>怎么在本地查看这些页面呢？那么需要搭建一个服务器。hexo提供了”hexo-server”模块，通过以下命令来安装。<br><code>$ npm install hexo-server --save</code><br>安装完成后，在命令行里输入以下命令可启动服务器<br><code>$ hexo server</code>在浏览器里输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可查看网站。在服务器启动期间，hexo会监视文件变动并自动更新，您无须重启服务器。<br>注意：有时在端口4000下很长时间无法加载出页面，此时可以试着更换端口。如下：<br><code>$ npm server -p 5000</code><br>完成上述步骤后，在浏览器里可以看到如下界面：<img src="http://omsqnp96s.bkt.clouddn.com/static/images/hexo2.png?imageView2/0/w/600/h/600">
-一个hexo默认的博客已经成型了。<h3 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h3></li>
+<li>怎么在本地查看这些页面呢？那么需要搭建一个服务器。hexo提供了”hexo-server”模块，通过以下命令来安装。<br><code>$ npm install hexo-server --save</code><br>安装完成后，在命令行里输入以下命令可启动服务器<br><code>$ hexo server</code><br>执行完命令后，在浏览器里输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可查看网站。在服务器启动期间，hexo会监视文件变动并自动更新，您无须重启服务器。<br>注意：有时在端口4000下很长时间无法加载出页面，此时可以试着更换端口。如下：<br><code>$ npm server -p 5000</code><br>完成上述步骤后，在浏览器里可以看到如下界面：<img src="http://omsqnp96s.bkt.clouddn.com/static/images/hexo2.png?imageView2/0/w/600/h/600">
+一个hexo默认的博客已经成型了。<h3 id="配置博客"><a href="#配置博客" class="headerlink" title="配置博客"></a>配置博客</h3>默认博客生成了，那么怎么将它变成你的个人定制博客呢？我们需要对生成的 _config.yml 文件进行修改。具体可查看文档里的配置章节。这里有点需要注意的是，键值对中，冒号后面跟一个空格即可。<br>除了常规配置外，hexo还为我们提供了很多 Hexo主题。根据自己的喜好选择主题，clone下来的主题会在themes文件夹里。将根目录下的_config.yml里的theme值修改成你选择要应用的主题名，然后进入到themes相应主题里，对主题里的_config.yml进行配置。这些工作都完成后了该怎么来查看效果呢？<br>我们先用<code>$ hexo clean</code>清理已经生成的静态文件，然后执行<br><code>$ hexo g</code><br><code>$ npm server -p 5000</code><br>在浏览器里就可以查看啦。<h2 id="将hexo部署到github"><a href="#将hexo部署到github" class="headerlink" title="将hexo部署到github"></a>将hexo部署到github</h2>到目前为止，我们的个人博客只能在本地查看，怎么实现通过域名来访问个人博客呢？当然可以通过购买域名和空间来实现，我们也可以利用GitHub免费实现。<br>GitHub为每一个用户分配了一个二级域名<user-id>.github.io，用户为自己的二级域名创建主页很容易，只要在托管空间下创建一个名为<user-id>.github.io的版本库，向其master分支提交网站静态页面即可。需要注意的一个是，<user-id>是你的用户名。<br>创建好了版本库，接下来就是要把生成的静态页面部署到GitHub版本库上了。打开根目录下的_config.yml文件，找到deploy设置如下,<user-id>根据你的用户名来设置。注意空格缩进。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:&lt;user-id&gt;/&lt;user-id&gt;.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+</user-id></user-id></user-id></user-id></li>
 </ol>
+<p>到目前，准备工作已经全部完成。在Git Bash里输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g</div><div class="line">$hexo d</div></pre></td></tr></table></figure></p>
+<p>如果看到”Deploy done: git”即表示部署成功。<br>打开GitHub里<user-id>.github.io版本库，找到”Settings”，点击进去，在”GitHub Pages”模块，有”Your site is published at ……”，点击这个链接，即可查看你部署成功后的博客。</user-id></p>
+<h2 id="给博客绑定个人域名"><a href="#给博客绑定个人域名" class="headerlink" title="给博客绑定个人域名"></a>给博客绑定个人域名</h2><p>通过GitHub主页来访问，域名有些长，而且一看就知道是存放Github上。可能我们会想绑定自己的独立域名，拥有属于自己的独立博客。前提当然是你有个已经购买了的域名。<br>我是在腾讯云买的域名，下面就讲讲在腾讯云里怎么设置。登录后，找到“云解析”模块，选择你要解析的域名，在操作里点击“解析”——“添加记录”。记录类型选择”CNAME”，它的作用是将域名指向另一个域名。主机记录默认，记录值填GitHub提供的个人主页域名，如”yang.github.io”。其它默认，保存。再添加一个记录，主机记录填写”www”，其它同上，保存。<br>回到GitHub里<user-id>.github.io版本库，在右上角点击”Create new file”，将文件命名为”CNAME”，里面写入你刚才解析过的域名。如：”auraty.com”。等10分钟后，在浏览器里就可以直接通过”auraty.com”来访问我的个人博客啦。</user-id></p>
 
       
 
@@ -406,11 +410,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">成长</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">成长</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
