@@ -6,7 +6,7 @@ menu:
 
 # SubNav
 subnav:
-  github: "#"
+  github: "https://github.com/zilan93"
   weibo: "#"
   rss: "#"
   zhihu: "#"
@@ -14,7 +14,7 @@ subnav:
   #weixin: "#"
   #jianshu: "#"
   #douban: "#"
-  #mail: "mailto:litten225@qq.com"
+  #mail: "zilan93@126.com"
   #facebook: "#"
   #google: "#"
   #twitter: "#"
@@ -56,7 +56,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar:
+avatar: http://omsqnp96s.bkt.clouddn.com/static/images/photo.jpg
 
 #是否开启分享
 share_jia: true
