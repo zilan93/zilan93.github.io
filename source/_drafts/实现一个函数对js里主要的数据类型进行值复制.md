@@ -99,12 +99,14 @@ a instanceof Object;    //true
 4. 对象原生toString检测
    通过`Object.prototype.toString`来检测，它的工作原理是，先取得对象的一个内部属性[[Class]]，然后依据这个属性，返回一个类似于"[object Array]"的字符串作为结果（[[]]表示语言内部用到的、外部不可直接访问的属性）。利用这个方法，再配合call，我们可以取得任何对象的内部属性[[Class]]。然后把类型检测转化为字符串比较，以达到我们的目的。
    为什么不直接obj.toString()呢？虽然Array继承自Object（所有对象都继承Object()），内部也有`toString`方法，但是这个方法可能被改写达达不到我们的要求。
+检测数组方法可以参考(Javascript学习笔记：检测数组方法)[https://www.w3cplus.com/javascript/array-part-2.html] 这篇文章。
 
 ## 递归算法  ##
 在程序中，递归就是函数直接调用自己或者间接调用自己。
-在我们这个题目里，通过`for…in`来遍历数组或对象。通过`arguments.callee()`来接收一个属性值，`arguments.callee()`的作用是调用当前正在执行的函数，也就是`clone(obj)`。这一操作的作用是，属性值
+在我们这个题目里，通过`for…in`来遍历数组或对象。通过`arguments.callee()`来接收一个属性值，`arguments.callee()`的作用是调用当前正在执行的函数，也就是`clone(obj)`。这一操作的作用是，属性值可以是任何数据类型，它可能是一个对象，如果直接`obj2[i] = obj[i]`，那么复制的就是对象的引用了。所以我们需要对这个值再进行一次深度复制。即通过`arguments.callee()`来调用当前执行的函数。
 ```
 for(var i in obj) {
                     obj2[i]=arguments.callee(obj[i]);
                 }
 ```
+递归算法可以参考[javascript递归算法的初步认识及使用技巧](http://www.imooc.com/article/11823)这篇文章。
