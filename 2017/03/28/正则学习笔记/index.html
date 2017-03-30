@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>about | Auraty</title>
+  <title>正则学习笔记 | Auraty</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  <meta name="description" content="REGEXP对象JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。  ● 字面量：var test = /a/;  ● 构造函数：var test = new RegExp;(匹配模式，标志)  如：var reg = new EegExp(&amp;#39;\\bis\\b&amp;#39;,&amp;#39;g&amp;#39;);  其中’\b’表示单词边界，前面再加上’\’用来转义。
+定界符定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/03/28/正则学习笔记/index.html">
 <meta property="og:site_name" content="Auraty">
-<meta property="og:updated_time" content="2017-03-17T07:38:17.860Z">
+<meta property="og:description" content="REGEXP对象JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。  ● 字面量：var test = /a/;  ● 构造函数：var test = new RegExp;(匹配模式，标志)  如：var reg = new EegExp(&amp;#39;\\bis\\b&amp;#39;,&amp;#39;g&amp;#39;);  其中’\b’表示单词边界，前面再加上’\’用来转义。
+定界符定">
+<meta property="og:updated_time" content="2017-03-30T08:11:34.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
+<meta name="twitter:title" content="正则学习笔记">
+<meta name="twitter:description" content="REGEXP对象JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。  ● 字面量：var test = /a/;  ● 构造函数：var test = new RegExp;(匹配模式，标志)  如：var reg = new EegExp(&amp;#39;\\bis\\b&amp;#39;,&amp;#39;g&amp;#39;);  其中’\b’表示单词边界，前面再加上’\’用来转义。
+定界符定">
   
     <link rel="alternative" href="/atom.xml" title="Auraty" type="application/atom+xml">
   
@@ -148,27 +154,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-正则学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      正则学习笔记
     </h1>
   
 
         
-        <a href="/about/index.html" class="archive-article-date">
-  	<time datetime="2017-03-16T01:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-16</time>
+        <a href="/2017/03/28/正则学习笔记/" class="archive-article-date">
+  	<time datetime="2017-03-28T03:10:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="REGEXP对象"><a href="#REGEXP对象" class="headerlink" title="REGEXP对象"></a>REGEXP对象</h2><p>JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。<br>  ● 字面量：<code>var test = /a/;</code><br>  ● 构造函数：<code>var test = new RegExp;</code>(匹配模式，标志)<br>  如：<code>var reg = new EegExp(&#39;\\bis\\b&#39;,&#39;g&#39;);</code><br>  其中’\b’表示单词边界，前面再加上’\’用来转义。</p>
+<h2 id="定界符"><a href="#定界符" class="headerlink" title="定界符"></a>定界符</h2><p>定界符可以是除字母数字或反斜杠外的任何字符，必须使用相同的字符来标记模式的开始和结束，通常，我们看到的都是使用的正斜杠，如/a/。</p>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p>模式修饰符不同于其他的字符，它们放在结束定界符之后。<br>g : global全文搜索，不添加该修饰符时，搜索到第一个即停止匹配。<br>i : ignore case忽略大小写，不添加该修饰符时，大小写敏感。<br>m : multiple lines多行搜索。</p>
+<h2 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h2><p>正则表达式由两种基本字符类型组成，字面量字符和元字符。</p>
+<h3 id="字面量字符"><a href="#字面量字符" class="headerlink" title="字面量字符"></a>字面量字符</h3><p>字面量字符是一个值，它的书写方式与所解释的完全一样。如/ab/用来匹配’ab’字符串。</p>
+<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>元字符是有特殊含义的符号。<br>如：. ? + * $ ^ | () {} [] | \</p>
+<h2 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h2><ol>
+<li>字符类<br>字符类是通过把字符放置在方括号（[]）内创建的。<br>所谓类是指符合某些特征的对象，一个泛指，而不是特指某个字符。例如，表达式[abc]把字符a或b或c归为一类，表达式可以匹配其中a,b,c任一个即匹配成功。</li>
+<li>范围类<br>如[a-z]表示匹配a到z的任意字符。[0-9]表示匹配0到9的任意数字。</li>
+<li>预定义类</li>
+</ol>
+<h2 id="边界匹配字符"><a href="#边界匹配字符" class="headerlink" title="边界匹配字符"></a>边界匹配字符</h2><h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><p>可以通过量词，来限定匹配的次数。注意：量词作用于它前面的字符匹配。<br>{2}——匹配2次<br>{2,}——至少匹配2次<br>{2,5}——匹配2到5次<br>？——匹配0次或1次<br>*——匹配0次或多次<br>+——匹配1次或多次</p>
+<h2 id="贪婪模式与非贪婪模式"><a href="#贪婪模式与非贪婪模式" class="headerlink" title="贪婪模式与非贪婪模式"></a>贪婪模式与非贪婪模式</h2><p>用{3,6}来匹配12345678的结果？<br>正则默认尽可能多的匹配（贪婪模式），在这里它会匹配123456；在非贪婪模式里，它只匹配123就会停止匹配，如果加了’g’全局匹配修饰符的话，会全局匹配即结果为’123’,’456’<br>非贪婪模式：让正则表达式尽可能少的匹配，一旦匹配成功即停止尝试匹配。使用非贪婪模式在量词后面加上’?‘即可。</p>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>使用()可以达到分组的功能，使量词作用于分组。而不只是某一个字符。<br>如一个模式里有三个分组，则分别对应$1,$2,$3。$1,$2,$3的值分别是对应的匹配结果。</p>
+<h2 id="前瞻"><a href="#前瞻" class="headerlink" title="前瞻"></a>前瞻</h2><h2 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h2>
       
 
       
@@ -202,6 +222,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -252,7 +283,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/about/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/03/28/正则学习笔记/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -264,6 +295,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/03/29/实现一个函数对js里主要的数据类型进行值复制/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          实现一个函数对js里主要的数据类型进行值复制
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/18/hexo搭建博客过程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo搭建博客过程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -296,7 +346,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
