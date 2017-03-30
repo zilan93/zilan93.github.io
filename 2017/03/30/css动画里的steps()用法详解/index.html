@@ -8,14 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>css动画里的steps()用法详解【译】 | Auraty</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="原文地址：http://designmodo.com/steps-css-animations/原文作者：Joni Trythall我想你在css 动画里使用steps()会和我一样有很多困惑。一开始我不清楚怎样使用它，于是搜索出了两个案例：typing demo by Lea Verou 和 animated sprite sheet by Simurai.这些例子很棒，帮助我开始理解这个特别的">
+  <meta name="description" content="原文地址：http://designmodo.com/steps-css-animations/原文作者：Joni Trythall
+我想你在css 动画里使用steps()会和我一样有很多困惑。一开始我不清楚怎样使用它，于是搜索出了两个案例：typing demo by Lea Verou 和 animated sprite sheet by Simurai.这些例子很棒，帮助我开始理解这个特别">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css动画里的steps()用法详解【译】">
 <meta property="og:url" content="http://yoursite.com/2017/03/30/css动画里的steps()用法详解/index.html">
 <meta property="og:site_name" content="Auraty">
-<meta property="og:description" content="原文地址：http://designmodo.com/steps-css-animations/原文作者：Joni Trythall我想你在css 动画里使用steps()会和我一样有很多困惑。一开始我不清楚怎样使用它，于是搜索出了两个案例：typing demo by Lea Verou 和 animated sprite sheet by Simurai.这些例子很棒，帮助我开始理解这个特别的">
+<meta property="og:description" content="原文地址：http://designmodo.com/steps-css-animations/原文作者：Joni Trythall
+我想你在css 动画里使用steps()会和我一样有很多困惑。一开始我不清楚怎样使用它，于是搜索出了两个案例：typing demo by Lea Verou 和 animated sprite sheet by Simurai.这些例子很棒，帮助我开始理解这个特别">
 <meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/170330_1.png?imageView2/0/w/600/h/600">
-<meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/170330_2.png?imageView2/0/w/600/h/600">
+<meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/170330_2.gif?imageView2/0/w/600/h/600">
 <meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/170330_3.png?imageView2/0/w/600/h/600">
 <meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/170330_4.png?imageView2/0/w/600/h/600">
 <meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/170330_5.png?imageView2/0/w/600/h/600">
@@ -28,10 +30,11 @@
 <meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/170330_12.png?imageView2/0/w/600/h/600">
 <meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/170330_13.png?imageView2/0/w/600/h/600">
 <meta property="og:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/170330_14.png?imageView2/0/w/600/h/600">
-<meta property="og:updated_time" content="2017-03-30T08:00:46.875Z">
+<meta property="og:updated_time" content="2017-03-30T08:02:06.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css动画里的steps()用法详解【译】">
-<meta name="twitter:description" content="原文地址：http://designmodo.com/steps-css-animations/原文作者：Joni Trythall我想你在css 动画里使用steps()会和我一样有很多困惑。一开始我不清楚怎样使用它，于是搜索出了两个案例：typing demo by Lea Verou 和 animated sprite sheet by Simurai.这些例子很棒，帮助我开始理解这个特别的">
+<meta name="twitter:description" content="原文地址：http://designmodo.com/steps-css-animations/原文作者：Joni Trythall
+我想你在css 动画里使用steps()会和我一样有很多困惑。一开始我不清楚怎样使用它，于是搜索出了两个案例：typing demo by Lea Verou 和 animated sprite sheet by Simurai.这些例子很棒，帮助我开始理解这个特别">
 <meta name="twitter:image" content="http://omsqnp96s.bkt.clouddn.com/static/images/170330_1.png?imageView2/0/w/600/h/600">
   
     <link rel="alternative" href="/atom.xml" title="Auraty" type="application/atom+xml">
@@ -186,8 +189,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>原文地址：<a href="http://designmodo.com/steps-css-animations/" target="_blank" rel="external">http://designmodo.com/steps-css-animations/</a><br>原文作者：<a href="http://designmodo.com/author/joni/" title="Posts by Joni Trythall" rel="external" target="_blank">Joni Trythall</a><br>我想你在css 动画里使用steps()会和我一样有很多困惑。一开始我不清楚怎样使用它，于是搜索出了两个案例：<a href="http://lea.verou.me/2011/09/pure-css3-typing-animation-with-steps/" target="_blank">typing demo by Lea Verou</a> 和 <a href="http://jsfiddle.net/simurai/CGmCe/" target="_blank">animated sprite sheet by Simurai</a>.<br>这些例子很棒，帮助我开始理解这个特别的timming function，但是它们是如此优秀的例子，以至于在demo之外还是难以理解怎样使用steps()。</p>
-<p>所以，我仔细研究了steps()并且做了一些动画demos用来帮助理解一些难点。<br><a id="more"></a></p>
+        <p>原文地址：<a href="http://designmodo.com/steps-css-animations/" target="_blank" rel="external">http://designmodo.com/steps-css-animations/</a><br>原文作者：<a href="http://designmodo.com/author/joni/" title="Posts by Joni Trythall" rel="external" target="_blank">Joni Trythall</a></p>
+<p>我想你在css 动画里使用steps()会和我一样有很多困惑。一开始我不清楚怎样使用它，于是搜索出了两个案例：<a href="http://lea.verou.me/2011/09/pure-css3-typing-animation-with-steps/" target="_blank">typing demo by Lea Verou</a> 和 <a href="http://jsfiddle.net/simurai/CGmCe/" target="_blank">animated sprite sheet by Simurai</a>.<br>这些例子很棒，帮助我开始理解这个特别的timming function，但是它们是如此优秀的例子，以至于在demo之外还是难以理解怎样使用steps()。<br>所以，我仔细研究了steps()并且做了一些动画demos用来帮助理解一些难点。<br><a id="more"></a></p>
 <h2 id="steps介绍"><a href="#steps介绍" class="headerlink" title="steps介绍"></a>steps介绍</h2><p>steps()是一个timing function，允许我们将动画或者过渡分割成段，而不是从一种状态持续到另一种状态的过渡。这个函数有两个参数——第一个参数是一个正值，指定我们希望动画分割的段数。</p>
 <blockquote>
 <p>Steps(<number_of_steps>，<direction>)</direction></number_of_steps></p>
@@ -195,7 +198,7 @@
 <p>第二个参数定义了这个要点 在我们的@keyframes中申明的动作将会发生的关键。这个值是可选的，在没有传递参数时，默认为”end”。方向为”start”表示一个左–持续函数，在动画开始时，动画的第一段将会马上完成。以左侧端点为起点，立即跳到第一个step的结尾处。它会立即跳到第一段的结束并且保持这样的状态直到第一步的持续时间结束。后面的每一帧都将按照此模式来完成动画。</p>
 <p>方向为”end”表示一个右–持续函数。动画执行时，在每一帧里，动画保持当前状态直到这一段的持续时间完成，才会跳到下一步的起点，后面的每一帧都按照这个模式来进行，在最后一帧的起点，等到这一帧的持续时间结束，整个动画的执行也已经结束，执行动画的元素来不及跳到这一帧的终点，直接回到了整个动画起点，开始了第二次动画。每个选择本质上从一个不同的面移动这个元素并且将产生一个不同的位置在这个相同的动画里。<br>这面是示例图：</p>
 <img src="http://omsqnp96s.bkt.clouddn.com/static/images/170330_1.png?imageView2/0/w/600/h/600">
-<p>动态解析图如下：<br><img src="http://omsqnp96s.bkt.clouddn.com/static/images/170330_2.png?imageView2/0/w/600/h/600"></p>
+<p>动态解析图如下：<br><img src="http://omsqnp96s.bkt.clouddn.com/static/images/170330_2.gif?imageView2/0/w/600/h/600"></p>
 <h2 id="填充模式和迭代次数的影响"><a href="#填充模式和迭代次数的影响" class="headerlink" title="填充模式和迭代次数的影响#"></a>填充模式和迭代次数的影响#</h2><p>在我们开始前，明白一个不同的填充模式或者迭代次数将会怎样影响steps()是非常重要的，例如”forwards”或者”infinite”的使用。如果我们有两辆车，使用相同的动画持续时间、相同的steps()值，但是其中一个设置（infinite），另一个填充（forward）,终点的这两辆汽车看起来非常不同，即使他们从相同的轴点出发。</p>
 <p>“forwards”的命令使这个动画元素保持着@keyframes里最后一个动画样式。在动画，里将它与steps()联系使这个动作出现，好像初始的静止状态没有计算到总的步数里。当它是”end”，好像这个车行驶了额外的步数超出了你的steps()的声明，取决于你怎样看待它。</p>
 <p>这些讲解听起来还是很散乱，但是我们将在demos里慢慢讲解。（demo地址：<a href="http://designmodo.com/demo/stepscss/）现在最重要的事情是留心这些变化将会怎样影响你的意图和steps数。下面是infinite" target="_blank" rel="external">http://designmodo.com/demo/stepscss/）现在最重要的事情是留心这些变化将会怎样影响你的意图和steps数。下面是infinite</a> VS forwards车：</p>
