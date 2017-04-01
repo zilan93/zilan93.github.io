@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>正则学习笔记 | Auraty</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="REGEXP对象JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。  ● 字面量：var test = /a/;  ● 构造函数：var test = new RegExp;(匹配模式，标志)  如：var reg = new EegExp(&amp;#39;\\bis\\b&amp;#39;,&amp;#39;g&amp;#39;);  其中’\b’表示单词边界，前面再加上’\’用来转义。
+  <meta name="description" content="REGEXP对象JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。  ● 字面量：var test = /a/;  ● 构造函数：var test = new RegExp(匹配模式，标志);  如：var reg = new EegExp(&amp;#39;\\bis\\b&amp;#39;,&amp;#39;g&amp;#39;);  其中’\b’表示单词边界，前面再加上’\’用来转义。
 定界符定">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则学习笔记">
 <meta property="og:url" content="http://yoursite.com/2017/03/28/正则学习笔记/index.html">
 <meta property="og:site_name" content="Auraty">
-<meta property="og:description" content="REGEXP对象JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。  ● 字面量：var test = /a/;  ● 构造函数：var test = new RegExp;(匹配模式，标志)  如：var reg = new EegExp(&amp;#39;\\bis\\b&amp;#39;,&amp;#39;g&amp;#39;);  其中’\b’表示单词边界，前面再加上’\’用来转义。
+<meta property="og:description" content="REGEXP对象JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。  ● 字面量：var test = /a/;  ● 构造函数：var test = new RegExp(匹配模式，标志);  如：var reg = new EegExp(&amp;#39;\\bis\\b&amp;#39;,&amp;#39;g&amp;#39;);  其中’\b’表示单词边界，前面再加上’\’用来转义。
 定界符定">
-<meta property="og:updated_time" content="2017-03-30T08:11:34.148Z">
+<meta property="og:updated_time" content="2017-04-01T08:10:18.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则学习笔记">
-<meta name="twitter:description" content="REGEXP对象JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。  ● 字面量：var test = /a/;  ● 构造函数：var test = new RegExp;(匹配模式，标志)  如：var reg = new EegExp(&amp;#39;\\bis\\b&amp;#39;,&amp;#39;g&amp;#39;);  其中’\b’表示单词边界，前面再加上’\’用来转义。
+<meta name="twitter:description" content="REGEXP对象JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。  ● 字面量：var test = /a/;  ● 构造函数：var test = new RegExp(匹配模式，标志);  如：var reg = new EegExp(&amp;#39;\\bis\\b&amp;#39;,&amp;#39;g&amp;#39;);  其中’\b’表示单词边界，前面再加上’\’用来转义。
 定界符定">
   
     <link rel="alternative" href="/atom.xml" title="Auraty" type="application/atom+xml">
@@ -174,7 +174,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="REGEXP对象"><a href="#REGEXP对象" class="headerlink" title="REGEXP对象"></a>REGEXP对象</h2><p>JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。<br>  ● 字面量：<code>var test = /a/;</code><br>  ● 构造函数：<code>var test = new RegExp;</code>(匹配模式，标志)<br>  如：<code>var reg = new EegExp(&#39;\\bis\\b&#39;,&#39;g&#39;);</code><br>  其中’\b’表示单词边界，前面再加上’\’用来转义。</p>
+        <h2 id="REGEXP对象"><a href="#REGEXP对象" class="headerlink" title="REGEXP对象"></a>REGEXP对象</h2><p>JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。<br>  ● 字面量：<code>var test = /a/;</code><br>  ● 构造函数：<code>var test = new RegExp(匹配模式，标志);</code><br>  如：<code>var reg = new EegExp(&#39;\\bis\\b&#39;,&#39;g&#39;);</code><br>  其中’\b’表示单词边界，前面再加上’\’用来转义。</p>
 <h2 id="定界符"><a href="#定界符" class="headerlink" title="定界符"></a>定界符</h2><p>定界符可以是除字母数字或反斜杠外的任何字符，必须使用相同的字符来标记模式的开始和结束，通常，我们看到的都是使用的正斜杠，如/a/。</p>
 <h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p>模式修饰符不同于其他的字符，它们放在结束定界符之后。<br>g : global全文搜索，不添加该修饰符时，搜索到第一个即停止匹配。<br>i : ignore case忽略大小写，不添加该修饰符时，大小写敏感。<br>m : multiple lines多行搜索。</p>
 <h2 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h2><p>正则表达式由两种基本字符类型组成，字面量字符和元字符。</p>
@@ -227,7 +227,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">正则</a>
         		</li>
       		
 		</ul>
@@ -412,7 +412,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -420,11 +428,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
             <div class="clearfix"></div>
