@@ -65,10 +65,6 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
-    			
-            
-    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -77,12 +73,6 @@
 			<div class="social">
 				
 					<a class="github" target="_blank" href="https://github.com/zilan93" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -118,12 +108,6 @@
 				<div class="social">
 					
 						<a class="github" target="_blank" href="https://github.com/zilan93" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -304,21 +288,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="REGEXP对象"><a href="#REGEXP对象" class="headerlink" title="REGEXP对象"></a>REGEXP对象</h2><p>JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。<br>  ● 字面量：<code>var test = /a/;</code><br>  ● 构造函数：<code>var test = new RegExp(匹配模式，标志);</code><br>  如：<code>var reg = new EegExp(&#39;\\bis\\b&#39;,&#39;g&#39;);</code><br>  其中’\b’表示单词边界，前面再加上’\’用来转义。</p>
+        <h2 id="REGEXP对象"><a href="#REGEXP对象" class="headerlink" title="REGEXP对象"></a>REGEXP对象</h2><p>JS通过内置对象RegExp支持正则表达式，有两种方法实例化RegExp对象。<br>  ● 字面量：<code>var test = /a/;</code><br>  ● 构造函数：<code>var test = new RegExp(匹配模式，修饰符);</code><br>  如：<code>var reg = new EegExp(&#39;\\bis\\b&#39;,&#39;g&#39;);</code><br>  其中’\b’表示单词边界，前面再加上’\’用来转义。</p>
 <h2 id="定界符"><a href="#定界符" class="headerlink" title="定界符"></a>定界符</h2><p>定界符可以是除字母数字或反斜杠外的任何字符，必须使用相同的字符来标记模式的开始和结束，通常，我们看到的都是使用的正斜杠，如/a/。</p>
 <h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p>模式修饰符不同于其他的字符，它们放在结束定界符之后。<br>g : global全文搜索，不添加该修饰符时，搜索到第一个即停止匹配。<br>i : ignore case忽略大小写，不添加该修饰符时，大小写敏感。<br>m : multiple lines多行搜索。</p>
 <h2 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h2><p>正则表达式由两种基本字符类型组成，字面量字符和元字符。</p>
 <h3 id="字面量字符"><a href="#字面量字符" class="headerlink" title="字面量字符"></a>字面量字符</h3><p>字面量字符是一个值，它的书写方式与所解释的完全一样。如/ab/用来匹配’ab’字符串。</p>
 <h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>元字符是有特殊含义的符号。<br>如：. ? + * $ ^ | () {} [] | \</p>
 <h2 id="字符类"><a href="#字符类" class="headerlink" title="字符类"></a>字符类</h2><ol>
-<li>字符类<br>字符类是通过把字符放置在方括号（[]）内创建的。<br>所谓类是指符合某些特征的对象，一个泛指，而不是特指某个字符。例如，表达式[abc]把字符a或b或c归为一类，表达式可以匹配其中a,b,c任一个即匹配成功。</li>
+<li>字符类<br>字符类是通过把字符放置在方括号（[]）内创建的。<br>所谓类是指符合某些特征的对象，一个泛指，而不是特指某个字符。例如，表达式[abc]把字符a或b或c归为一类，表达式可以匹配其中a,b,c任一个即匹配成功。<br>注意：<code>[^abc]</code>的前括号加了一个”^”，表示取反，即匹配不为括号里的字符。</li>
 <li>范围类<br>如[a-z]表示匹配a到z的任意字符。[0-9]表示匹配0到9的任意数字。</li>
-<li>预定义类</li>
+<li>预定义类<br>| 字符  | 类              | 描述                            |<br>| .     | [^\n\r]         | 匹配除了换行和回车外的任意字符  |<br>| \d    | [0-9]           | 匹配数字字符                    |<br>| \D    | [^0-9]          | 匹配非数字字符                  |<br>| \s    | [\t\n\x0B\f\r]  | 匹配空白字符                    |<br>| \S    | [^\t\n\x0B\f\r] | 匹配非空白字符                  |<br>| \w    | [0-9_a-zA-Z]    | 匹配单词字符                    |<br>| \W    | [^a-zA-Z_0-9]   | 非单词字符                      |<h2 id="边界匹配字符"><a href="#边界匹配字符" class="headerlink" title="边界匹配字符"></a>边界匹配字符</h2></li>
 </ol>
-<h2 id="边界匹配字符"><a href="#边界匹配字符" class="headerlink" title="边界匹配字符"></a>边界匹配字符</h2><h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><p>可以通过量词，来限定匹配的次数。注意：量词作用于它前面的字符匹配。<br>{2}——匹配2次<br>{2,}——至少匹配2次<br>{2,5}——匹配2到5次<br>？——匹配0次或1次<br>*——匹配0次或多次<br>+——匹配1次或多次</p>
+<h2 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h2><p>由于元字符、特殊字符、字符类都是一对一进行匹配的，如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = &apos;abcd26&apos;;</div><div class="line">var b = a.replace(/../,&apos;1&apos;);  // 1cd26</div></pre></td></tr></table></figure></p>
+<p>如果需要匹配的字符串过长，这样的写法将会很麻烦，我们可以通过量词，来限定匹配的次数。注意：量词作用于它前面的字符匹配。如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = &apos;abcd26&apos;;</div><div class="line">var b = a.replace(/.&#123;2&#125;/,&apos;1&apos;);  // 1cd26</div></pre></td></tr></table></figure></p>
+<p>{2}——匹配2次<br>{2,}——至少匹配2次<br>{2,5}——匹配2到5次<br>？——匹配0次或1次<br>*——匹配0次或多次<br>+——匹配1次或多次</p>
 <h2 id="贪婪模式与非贪婪模式"><a href="#贪婪模式与非贪婪模式" class="headerlink" title="贪婪模式与非贪婪模式"></a>贪婪模式与非贪婪模式</h2><p>用{3,6}来匹配12345678的结果？<br>正则默认尽可能多的匹配（贪婪模式），在这里它会匹配123456；在非贪婪模式里，它只匹配123就会停止匹配，如果加了’g’全局匹配修饰符的话，会全局匹配即结果为’123’,’456’<br>非贪婪模式：让正则表达式尽可能少的匹配，一旦匹配成功即停止尝试匹配。使用非贪婪模式在量词后面加上’?‘即可。</p>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>使用()可以达到分组的功能，使量词作用于分组。而不只是某一个字符。<br>如一个模式里有三个分组，则分别对应$1,$2,$3。$1,$2,$3的值分别是对应的匹配结果。</p>
-<h2 id="前瞻"><a href="#前瞻" class="headerlink" title="前瞻"></a>前瞻</h2><h2 id="对象属性"><a href="#对象属性" class="headerlink" title="对象属性"></a>对象属性</h2>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>使用<code>()</code>可以达到分组的功能，使量词作用于分组。而不只是某一个字符。<br>如一个模式里有三个分组，则分别对应$1,$2,$3。$1,$2,$3的值分别是对应的匹配结果。</p>
+<h2 id="RegExp对象属性"><a href="#RegExp对象属性" class="headerlink" title="RegExp对象属性"></a>RegExp对象属性</h2><p>一个正则表达式对象拥有以下属性：</p>
+<ol>
+<li>global:默认值为false，即不进行全局匹配。如果需要进行全局匹配，设置成true即可。</li>
+<li>ignoreCase:默认值为false，即区分大小写匹配。如果需要忽略大小写，设置成true即可。</li>
+<li>multiline:默认值为false，即不进行跨行搜索。</li>
+<li>lastIndex:搜索开始的索引位，默认值为0。</li>
+<li>source:用于存储正则表达式匹配模式的属性。<br><strong> 除了lastIndex外，其它属性在对象创建后就不能再修改了。 </strong>前三个属性是可以用修饰符来表示的。如上面所示的”g”,”i”,”m”。只要它们被传递给了构造器，相应的修饰符就会被设置为true。</li>
+</ol>
+<h2 id="RegExp对象方法"><a href="#RegExp对象方法" class="headerlink" title="RegExp对象方法"></a>RegExp对象方法</h2><p>RegExp对象中有两种可用于查找匹配的方法：test()和exec()。</p>
+<ol>
+<li>String.test(/匹配模式/)——返回一个布尔值，如果找到匹配的内容，则返回true，否则返回false。</li>
+<li>exec()——返回一个由匹配字符串组成的数组。<br>以正则表达式为参数的字符串方法<br>在String对象中，以正则表达式对象为参数的方法主要有以下这些：</li>
+<li>match()——返回的是一个包含匹配内容的数组；</li>
+<li>search()——返回的是第一个匹配内容所在的索引位置；</li>
+<li>replace(匹配模式，替换内容)——该方法能将匹配的文本替换成指定的字符串；<br>如果希望在匹配文本前后添加某些其它内容，可以使用”$&amp;”。<br>如：<figure class="highlight plain"><figcaption><span>a = 'abc13ds326';</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(a.replace(/[a-z]/g,&apos;$&amp;_&apos;)); //a_b_c_13d_s_326</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>如果正则表达式中分了组，那么可以使用$1来表示第一组，$2来表示第二组，以此类推。</p>
+<ol>
+<li>split()——能根据指定的正则表达式将目标字符串分割成若干个数组元素；</li>
+</ol>
+
       
 
       
@@ -539,25 +546,17 @@
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -582,19 +581,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
             
             <div class="clearfix"></div>
@@ -640,38 +639,6 @@
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
