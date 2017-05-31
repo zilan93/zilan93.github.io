@@ -6,9 +6,9 @@ menu:
 # SubNav
 subnav:
   github: "https://github.com/zilan93"
-  weibo: "#"
-  rss: "#"
-  zhihu: "#"
+  #weibo: "#"
+  #rss: "#"
+  #zhihu: "#"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
@@ -83,7 +83,7 @@ slider:
 #  friends: false
 smart_menu:
   innerArchive: '所有文章'
-  friends: '友链'
+  #friends: false
   aboutme: '关于我'
 
 friends:
@@ -94,4 +94,4 @@ friends:
   友情链接5: http://localhost:4000/
   友情链接6: http://localhost:4000/
 
-aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+aboutme: 前端开发  
