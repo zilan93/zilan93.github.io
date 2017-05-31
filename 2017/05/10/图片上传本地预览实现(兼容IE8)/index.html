@@ -16,7 +16,7 @@ HTML5 File API在HTML5 File API出现前，前端对于文件的操作的非常�
 <meta property="og:site_name" content="Auraty">
 <meta property="og:description" content="最近项目里需要用到上传图片并预览的功能，于是写了个jQuery预览图片插件，兼容IE8,下载地址。有需要的，可以直接下载。第一次写jQuery插件，如有不对之处，欢迎大家指正。下面是一些相关的知识点笔记。
 HTML5 File API在HTML5 File API出现前，前端对于文件的操作的非常有局限性的。出于安全角度考虑，从本地上传文件时，代码是不可能获取文件在用户本地的地址。但是File AP">
-<meta property="og:updated_time" content="2017-05-31T02:18:47.827Z">
+<meta property="og:updated_time" content="2017-05-31T02:27:23.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片上传本地预览实现（兼容IE8）">
 <meta name="twitter:description" content="最近项目里需要用到上传图片并预览的功能，于是写了个jQuery预览图片插件，兼容IE8,下载地址。有需要的，可以直接下载。第一次写jQuery插件，如有不对之处，欢迎大家指正。下面是一些相关的知识点笔记。
@@ -164,7 +164,7 @@ HTML5 File API在HTML5 File API出现前，前端对于文件的操作的非常�
 <li>Blob</li>
 <li>File</li>
 <li>FileList </li>
-<li>FileReader<a id="more"></a>
+<li>FileReader<br><br><a id="more"></a>
 <h2 id="FileList-API"><a href="#FileList-API" class="headerlink" title="FileList API"></a>FileList API</h2>当通过file控件获取文件后，可以通过该控件的files属性得到FileList对象。FileList对象里保存着选择的文件，即File对象。在MDN里有如下提示：</li>
 </ol>
 <blockquote>
@@ -190,8 +190,6 @@ HTML5 File API在HTML5 File API出现前，前端对于文件的操作的非常�
 </li>
 </ol>
 <p>参数src是上述我们通过createObjectURL创建的URL对象。<br>关于<em>兼容性</em>，不兼容IE9及以下浏览器，其它主流浏览器一般都没有问题。在MDN里提到，这是一个实验中的功能。</p>
-<h2 id="h5-FormData对象上传图片"><a href="#h5-FormData对象上传图片" class="headerlink" title="h5 FormData对象上传图片"></a>h5 FormData对象上传图片</h2><p>HTML5提出了XMLHttpRequest对象的第二版，从此ajax能够上传文件了。这是真正的”异步上传”，是将来的主流。我们主要用的是FormData对象，它能够构建类似表单的键值对。</p>
-<p>ajax上传代码，放在表单的submit事件回调函数中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">form.on(&apos;submit&apos;,function() &#123;</div><div class="line">    // 此处进行ajax上传</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <h1 id="图片预览兼容IE处理"><a href="#图片预览兼容IE处理" class="headerlink" title="图片预览兼容IE处理"></a>图片预览兼容IE处理</h1><p>IE9及以下版本不支持File API和URL API。因此需要做兼容处理。<br>在这里，我们需要用到document.selection。document.selection只有IE支持。代表了当前激活选中区，即高亮文本块，和/或文档中用户可执行某些操作的其它元素。selection 对象的典型用途是作为用户的输入，以便识别正在对文档的哪一部分正在处理，或者作为某一操作的结果输出给用户。<br>在用document.selection前，我们需要先创建选中区。如鼠标选中文本框，即是一个选中区。也可以通过js提供的select()方法创建一个选中区。创建了选中区后，我们就可以通过document.selection获取该选中区。如果要对选中区执行操作，则需要先调用createRange()方法。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//获取上传文件控件的值；</div><div class="line">file.select();</div><div class="line">var url = document.selection.createRange().text;</div></pre></td></tr></table></figure></p>
 <p>现有的获取IE低版本上传文件的value值一般都是这种方式，在IE中原本可以直接通过input的value值来获取上传图片的路径，但是在实际中很少看到使用。具体的大家可以去查查资料。<br>非IE6版本的IE由于安全问题直接设置img的src无法显示本地图片，但是可以通过滤镜来实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pic.style.filter = &quot;progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=&apos;scale&apos;,src=\&quot;&quot; + reallocalpath + &quot;\&quot;)&quot;;</div></pre></td></tr></table></figure></p>
 <p>到这里，图片本地预览基本就完成了。</p>
@@ -402,11 +400,11 @@ HTML5 File API在HTML5 File API出现前，前端对于文件的操作的非常�
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
               </li>
              
               <li class="article-tag-list-item">
