@@ -1,15 +1,16 @@
 ---
-title: 上传图片本地预览效果实现（兼容IE8）
-date: 2017-05-23 10:30:24
-tags:js
+title: 图片上传本地预览实现（兼容IE8）
+date: 2017-05-10 10:09:59
+tags: js
 ---
-最近项目里需要用到上传图片并预览的功能，于是写了个jQuery预览图片插件，下载[地址](https://github.com/zilan93/uploadImg.git)。如果有需要的，可以直接下载。第一次写jQuery插件，如有不对之处，欢迎大家指正。下面是一些相关的知识点笔记。
+最近项目里需要用到上传图片并预览的功能，于是写了个jQuery预览图片插件，兼容IE8,下载[地址](https://github.com/zilan93/uploadImg.git)。有需要的，可以直接下载。第一次写jQuery插件，如有不对之处，欢迎大家指正。下面是一些相关的知识点笔记。
 # HTML5 File API
 在HTML5 File API出现前，前端对于文件的操作的非常有局限性的。出于安全角度考虑，从本地上传文件时，代码是不可能获取文件在用户本地的地址。但是File API的出现，实现了这一功能。File API主要有以下几个接口：
 1. Blob
 2. File
 3. FileList 
 4. FileReader
+<br />
 <!-- more -->
 ## FileList API
 当通过file控件获取文件后，可以通过该控件的files属性得到FileList对象。FileList对象里保存着选择的文件，即File对象。在MDN里有如下提示：
@@ -74,16 +75,6 @@ url.revokeObjectURL(src);
 ```
 参数src是上述我们通过createObjectURL创建的URL对象。
 关于*兼容性*，不兼容IE9及以下浏览器，其它主流浏览器一般都没有问题。在MDN里提到，这是一个实验中的功能。
-
-## h5 FormData对象上传图片
-HTML5提出了XMLHttpRequest对象的第二版，从此ajax能够上传文件了。这是真正的"异步上传"，是将来的主流。我们主要用的是FormData对象，它能够构建类似表单的键值对。
-
-ajax上传代码，放在表单的submit事件回调函数中：
-```
-form.on('submit',function() {
-    // 此处进行ajax上传
-});
-```
 
 # 图片预览兼容IE处理
 IE9及以下版本不支持File API和URL API。因此需要做兼容处理。
